@@ -1,0 +1,235 @@
+/* ROOT HEADER*/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+}
+
+// black overlay
+.nav-overlay {
+  position: fixed;
+  top: 80px; /* height of navbar */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  background: rgba(0, 0, 0, 0.407);
+  z-index: 50;
+}
+
+//  NAVBAR
+.navbar {
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px -20px 30px 0px;
+
+  // logo-------
+  &__logo {
+    width: 53px;
+    height: 36px;
+  }
+  // logo<------
+
+  // search-------
+  &__search {
+    width: 480px;
+    padding: 5px 12px;
+    background-color: #f5f5f6;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  // search<------
+
+  // actions------
+  &__actions {
+    display: flex;
+    gap: 16px;
+
+    &__action {
+      font-size: 11px;
+      font-weight: 900;
+      color: #282c3f;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+      margin: 0 2.5px;
+
+      p {
+        margin: 0;
+      }
+
+      &:hover {
+        color: #ff3f6c;
+      }
+    }
+  }
+  // actions------
+
+  // &__nav-link {
+  //   font-size: 13.1px;
+  //   font-weight: 600;
+  //   text-decoration: none;
+  //   cursor: pointer;
+  //   position: relative;
+  //   color: #282c3f;
+  //   line-height: 80px;
+  //   letter-spacing: 0.5px;
+  //   padding: 0 13px;
+
+  //   &:hover {
+  //     color: #ff3f6c;
+  //   }
+
+  //   &:hover::after {
+  //     content: "";
+  //     position: absolute;
+  //     left: 0;
+  //     bottom: 0;
+  //     width: 100%;
+  //     height: 2.5px;
+  //     background-color: #ff3f6c;
+  //   }
+  // }
+}
+
+//  BASE UI NAVIGATION MENU
+.nav-menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  // ------navigation-links
+  &__list {
+    display: flex;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+  }
+
+  &__item {
+    //items in list
+    position: relative;
+    height: 100%;
+  }
+
+  &__trigger {
+    //trigger-point(items names)
+    height: 100%;
+    position: relative;
+    font-size: 12.4px;
+    font-weight: 600;
+    color: #282c3f;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #ff3f6c;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 2.5px;
+      background-color: #ff3f6c;
+
+      transform: scaleX(0);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      // transition: transform 150ms ease-out;
+    }
+  }
+  // navigation-links-------------
+
+  // ---------->navigation-content
+  &__content {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    // min-width: 180px;
+    // pointer-events: auto;
+  }
+  &__dropdown {
+    display: grid;
+    grid-template-columns: repeat(2, 230px);
+    gap: 36px 48px; // row-gap | column-gap
+    padding: 24px 30px;
+    list-style: none;
+  }
+
+  &__dropdown-item {
+    font-size: 14px;
+    color: #3e4152;
+    cursor: pointer;
+    padding: 8px 0;
+
+    &:hover {
+      color: #ff3f6c;
+      font-weight: 600;
+    }
+  }
+
+  // --------navigation-viewport(where should be visible)
+  &__viewport {
+    position: fixed;
+    top: 80px;
+    left: 8%;
+    min-width: 520px;
+    z-index: 100;
+  }
+  //navigation-viewport------------
+}
+
+.dropdown-category {
+  // break-inside: avoid;
+  display: block;
+}
+
+.dropdown-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #282c3f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.dropdown-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-sublist li {
+  font-size: 13.2px;
+  color: #696e79;
+  line-height: 1.8;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff3f6c;
+    font-weight: 600;
+  }
+}
+
+.nav-menu__item:hover .nav-menu__viewport {
+  pointer-events: auto;
+}

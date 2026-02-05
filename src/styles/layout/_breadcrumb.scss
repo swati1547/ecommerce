@@ -1,0 +1,37 @@
+.myntra-breadcrumb {
+  margin: 16px;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .MuiBreadcrumbs-ol {
+    align-items: center;
+  }
+
+  .MuiBreadcrumbs-separator {
+    margin: 0 6px;
+    color: #94969f;
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #9e9fa3;
+    font-size: 16px;
+    font-weight: 400;
+    // text-transform: uppercase;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #000000; // Myntra dark hover
+      text-decoration: underline;
+    }
+  }
+
+  .MuiTypography-root {
+    color: #3d3d3d;
+    font-size: 13.5px;
+    letter-spacing: 0.3px;
+    cursor: default;
+  }
+}

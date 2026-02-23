@@ -1,5 +1,5 @@
 import React from "react";
-import HeroBanner from "../Components/HeroBanner";
+import HeroBanner from "../components/home/HeroBanner";
 
 export default function HomePage() {
   return (

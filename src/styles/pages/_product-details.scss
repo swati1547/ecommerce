@@ -1,0 +1,15 @@
+@use "../abstracts/mixins" as *;
+
+.pdp {
+  margin: 1.7rem 2rem 0 0.5rem;
+
+  &__heading {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.hr {
+  @include hr;
+}

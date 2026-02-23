@@ -13,7 +13,7 @@ const formSchema = Yup.object({
     .required("This field is required")
     .matches(
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      "Please enter a valid email"
+      "Please enter a valid email",
     ),
   mobileNo: mobileValidation,
 });
@@ -27,7 +27,7 @@ export default function Login() {
   } = useForm({ resolver: yupResolver(formSchema), mode: "onChange" });
 
   function onSubmit(data) {
-    console.log(data);
+    // console.log(data);
   }
 
   return (

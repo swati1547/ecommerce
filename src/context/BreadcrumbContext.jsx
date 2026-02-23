@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const BreadcrumbContext = createContext();
+const BreadcrumbContext = createContext(null);
 
 export const BreadcrumbProvider = ({ children }) => {
   const [items, setItems] = useState([]);

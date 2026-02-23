@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Box, InputBase } from "@mui/material";
 import { NavigationMenu } from "@base-ui/react/navigation-menu";
@@ -8,31 +8,31 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-import departments from "../data/departments";
-import { useGetAllCategoriesbyDeptQuery } from "../Store/categoryapi";
+import departments from "../../data/departments";
+import { useGetAllCategoriesbyDeptQuery } from "../../store/api/categoryApi";
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState("");
   const [selectedDepartmentId, setSelectedDepartmentId] = useState(null);
 
-  const { data: categories } = useGetAllCategoriesbyDeptQuery(
-    selectedDepartmentId,
-    {
-      skip: !selectedDepartmentId,
-    },
-  );
+  const {
+    data: categories = [],
+    isLoading,
+    error,
+  } = useGetAllCategoriesbyDeptQuery(selectedDepartmentId, {
+    skip: !selectedDepartmentId,
+  });
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setActiveMenu("");
     setSelectedDepartmentId(null);
-  };
+  }, []);
 
   return (
     <header className="header">
-      {/* Black overlay */}
       {activeMenu && <div className="nav-overlay" onMouseEnter={closeMenu} />}
+
       <nav className="navbar">
-        {/* LOGO */}
         <Box className="navbar__left">
           <img
             className="navbar__logo"
@@ -41,41 +41,42 @@ export default function Navbar() {
           />
         </Box>
 
-        {/* NAVIGATION */}
         <NavigationMenu.Root
           className="nav-menu"
           value={activeMenu}
           onValueChange={setActiveMenu}
-          onMouseLeave={closeMenu} // ✅ CLOSE ON MOUSE LEAVE
+          onMouseLeave={closeMenu}
         >
           <NavigationMenu.List className="nav-menu__list">
             {departments.map((department) => (
               <NavigationMenu.Item
                 key={department._id}
-                value={department._id} // ✅ FIXED BUG
+                value={department._id}
                 className="nav-menu__item"
-                onMouseEnter={() => setSelectedDepartmentId(department._id)}
+                onMouseEnter={() => {
+                  setSelectedDepartmentId(department._id);
+                }}
               >
                 <NavigationMenu.Trigger className="nav-menu__trigger">
                   {department.department_name}
                 </NavigationMenu.Trigger>
 
-                <NavigationMenu.Content
-                  className="nav-menu__content"
-                  // forceMount
-                >
+                <NavigationMenu.Content className="nav-menu__content">
                   <ul className="nav-menu__dropdown">
-                    {categories?.map((category) => (
-                      <li key={category._id} className="dropdown-category">
-                        <p className="dropdown-title">
-                          {category.categoryName}
-                        </p>
-                        <ul className="dropdown-sublist">
-                          {category.subCategories.map((subCategory) => {
-                            return (
+                    {categories.map((category) => {
+                      return (
+                        <li
+                          key={category.categoryId}
+                          className="dropdown-category"
+                        >
+                          <p className="dropdown-title">
+                            {category.categoryName}
+                          </p>
+
+                          <ul className="dropdown-sublist">
+                            {category.subCategories?.map((subCategory) => (
                               <li key={subCategory.id}>
                                 <Link
-                                  // to="#"
                                   to={`/${category.categorySlug}/${subCategory.slug}`}
                                   className="nav-menu__dropdown-link"
                                   onClick={closeMenu}
@@ -83,22 +84,20 @@ export default function Navbar() {
                                   {subCategory.name}
                                 </Link>
                               </li>
-                            );
-                          })}
-                        </ul>
-                      </li>
-                    ))}
+                            ))}
+                          </ul>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </NavigationMenu.Content>
               </NavigationMenu.Item>
             ))}
 
-            {/* STUDIO */}
             <NavigationMenu.Item value="studio" className="nav-menu__item">
               <NavigationMenu.Trigger className="nav-menu__trigger">
                 STUDIO
               </NavigationMenu.Trigger>
-
               <NavigationMenu.Content className="nav-menu__content">
                 <p>Studio</p>
               </NavigationMenu.Content>
@@ -108,7 +107,6 @@ export default function Navbar() {
           <NavigationMenu.Viewport className="nav-menu__viewport" />
         </NavigationMenu.Root>
 
-        {/* SEARCH */}
         <Box className="navbar__right">
           <div className="navbar__search">
             <SearchOutlinedIcon sx={{ color: "#696e79", fontSize: "20px" }} />
@@ -119,7 +117,6 @@ export default function Navbar() {
           </div>
         </Box>
 
-        {/* ACTIONS */}
         <Box className="navbar__actions">
           <Link className="navbar__actions__action">
             <PermIdentityIcon />

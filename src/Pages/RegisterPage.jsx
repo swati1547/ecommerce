@@ -14,7 +14,7 @@ const validationSchema = Yup.object({
     .required("This field is required")
     .matches(
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      "Please enter a valid email"
+      "Please enter a valid email",
     ),
   name: Yup.string().required("This field is required"),
   gender: Yup.string().required("This field is required"),
@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
     .required("This field is required")
     .matches(
       /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/,
-      "Invalid date format. Use dd/mm/yyyy"
+      "Invalid date format. Use dd/mm/yyyy",
     ),
   altMobile: mobileValidation,
   hintName: Yup.string().required("This field is required"),
@@ -41,7 +41,7 @@ export default function Registration() {
   });
 
   async function onSubmit(data) {
-    console.log(data);
+    // console.log(data);
   }
 
   return (

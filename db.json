@@ -1,0 +1,376 @@
+{
+  "categories": [
+    {
+      "categoryId": "CAT-SHIRTS",
+      "categoryName": "Men Shirts",
+      "categorySlug": "shirts",
+      "subCategories": []
+    },
+    {
+      "departmentId": "dept_women",
+      "categoryId": "cat_women_westernwear",
+      "categoryName": "Westernwear",
+      "categorySlug": "westernwear",
+      "subCategories": [
+        {
+          "id": "subcat_dresses",
+          "name": "Dresses",
+          "slug": "dresses",
+          "allowedSpecs": [
+            "Shape",
+            "Neck",
+            "Length",
+            "Sleeve Length",
+            "Fabric",
+            "Hemline",
+            "Occasion",
+            "Fit",
+            "Transparency"
+          ],
+          "requiredSpecs": ["Shape", "Length", "Fabric"],
+          "filterableSpecs": ["Shape", "Length", "Fabric", "Occasion"]
+        },
+        {
+          "id": "subcat_tops",
+          "name": "Tops",
+          "slug": "tops",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        }
+      ]
+    },
+    {
+      "departmentId": "dept_women",
+      "categoryId": "cat_women_makeup",
+      "categoryName": "Makeup",
+      "categorySlug": "makeup",
+      "subCategories": []
+    },
+    {
+      "departmentId": "dept_women",
+      "categoryId": "cat_women_footwear",
+      "categoryName": "Footwear",
+      "categorySlug": "footwear",
+      "subCategories": [
+        {
+          "id": "subcat_flats",
+          "name": "Flats",
+          "slug": "flats",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        },
+        {
+          "id": "subcat_heels",
+          "name": "Heels",
+          "slug": "heels",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        }
+      ]
+    },
+    {
+      "departmentId": "dept_women",
+      "categoryId": "cat_women_ethnicwear",
+      "categoryName": "Ethnicwear",
+      "categorySlug": "ethnicwear",
+      "subCategories": [
+        {
+          "id": "subcat_kurtas_suits",
+          "name": "Kurtas & Suits",
+          "slug": "kurtas-suits",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        },
+        {
+          "id": "subcat_sarees",
+          "name": "Sarees",
+          "slug": "sarees",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        },
+        {
+          "id": "subcat_Jackets",
+          "name": "Jackets",
+          "slug": "Jackets",
+          "allowedSpecs": [],
+          "requiredSpecs": [],
+          "filterableSpecs": []
+        }
+      ]
+    },
+    {
+      "departmentId": "dept_women",
+      "categoryId": "cat_women_bags",
+      "categoryName": "Bags & Accessories",
+      "categorySlug": "bags-accessories",
+      "subCategories": []
+    }
+  ],
+
+  "products": [
+    {
+      "id": "w0014",
+      "name": "Liquid Foundation",
+      "slug": "liquid-foundation",
+      "categoryId": "cat_women_makeup",
+      "subcategoryId": "subcat_foundation",
+      "categorySlug": "makeup",
+      "subCategorySlug": "foundation",
+      "brandId": "brand_maybelline",
+      "basePrice": 1299,
+      "currency": "INR",
+      "discountPercentage": 15,
+      "isActive": true,
+      "isFeatured": false,
+      "tags": ["foundation", "makeup", "liquid"],
+      "images": [
+        {
+          "url": "https://m.media-amazon.com/images/I/61JTG53HldL._SX522_.jpg",
+          "altText": "Foundation",
+          "isPrimary": true
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/71wy+kInAsL._SX522_.jpg",
+          "altText": "Foundation",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/81K2gUmCC6L._SL1500_.jpg",
+          "altText": "Foundation",
+          "isPrimary": false
+        }
+      ],
+      "specifications": {
+        "shade": "Beige",
+        "finish": "Matte",
+        "volume": "30ml"
+      },
+      "variants": [
+        {
+          "variantId": "v009",
+          "sku": "FOUND-BEIGE",
+          "attributes": {
+            "shade": "Beige"
+          },
+          "price": 1104,
+          "compareAtPrice": 1299,
+          "isAvailable": true
+        }
+      ],
+      "totalQuantity": 220,
+      "ratingAverage": 4.5,
+      "reviewCount": 500,
+      "viewCount": 45000,
+      "createdAt": "2025-01-09T10:00:00Z",
+      "updatedAt": "2025-01-21T10:00:00Z"
+    },
+    {
+      "id": "w005",
+      "name": "Women A-Line Dress",
+      "productSlug": "h&m-women-a-line-dress-1",
+      "categoryId": "cat_women_westernwear",
+      "subcategoryId": "subcat_dresses",
+      "categorySlug": "westernwear",
+      "subCategorySlug": "dresses",
+      "categoryName": "Westernwear",
+      "subCategoryName": "Dresses",
+      "brandId": "brand_hm",
+      "brandName": "H&M",
+      "basePrice": 2999,
+      "currency": "INR",
+      "discountPercentage": 40,
+      "isActive": true,
+      "isFeatured": false,
+      "tags": ["dress", "western", "a-line", "women"],
+      "images": [
+        {
+          "url": "https://m.media-amazon.com/images/I/61dWOhkzKKL._SY879_.jpg",
+          "altText": "Women A-Line dress front view",
+          "isPrimary": true
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/619mG3mFkgL._SY741_.jpg",
+          "altText": "Women A-Line dress back view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/619tc7IXPTL._SY741_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61gEakFONiL._SX679_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/91m2+1zpoqL._SX679_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61SEbDxR-mL._SY741_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        }
+      ],
+      "productDetails": [
+        "Solid color design",
+        "Sleeveless with shoulder straps",
+        "Flattering A-line silhouette",
+        "Midi length with straight hem"
+      ],
+      "specifications": {
+        "Shape": "A-Line",
+        "Neck": "Shoulder Straps",
+        "Length": "Midi",
+        "Sleeve Length": "Sleeveless",
+        "Fabric": "Polyester",
+        "Hemline": "Straight",
+        "Occasion": "Casual",
+        "Fit": "Regular Fit"
+      },
+      "sizeAndFit": {
+        "modelHeight": "5'8\"",
+        "modelSize": "S"
+      },
+      "materialAndCare": {
+        "material": "Polyester",
+        "care": "Dry Clean"
+      },
+      "variants": [
+        {
+          "variantId": "v1",
+          "sku": "HM-AL-S",
+          "attributes": {
+            "size": "S"
+          },
+          "price": 1799,
+          "isAvailable": true
+        },
+        {
+          "variantId": "v2",
+          "sku": "HM-AL-M",
+          "attributes": {
+            "size": "M"
+          },
+          "price": 1799,
+          "isAvailable": true
+        }
+      ],
+      "totalQuantity": 140,
+      "ratingAverage": 4.2,
+      "reviewCount": 260,
+      "viewCount": 29000,
+      "createdAt": "2025-01-05T10:00:00Z",
+      "updatedAt": "2025-01-16T10:00:00Z"
+    },
+    {
+      "id": "w0010",
+      "name": "Women Floral Empire Dress",
+      "productSlug": "h&m-women-floral-empire-dress",
+      "categoryId": "cat_women_westernwear",
+      "subcategoryId": "subcat_dresses",
+      "categorySlug": "westernwear",
+      "subCategorySlug": "dresses",
+      "categoryName": "Westernwear",
+      "subCategoryName": "Dresses",
+      "brandId": "brand_zara",
+      "brandName": "Zara",
+      "brandSlug": "zara",
+      "basePrice": 3499,
+      "currency": "INR",
+      "discountPercentage": 30,
+      "isActive": true,
+      "isFeatured": true,
+      "tags": ["dress", "western", "floral", "empire", "women"],
+      "images": [
+        {
+          "url": "https://m.media-amazon.com/images/I/61L24awnI5L._SY741_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": true
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61BohCkM+GL._SY741_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61fIUv+NnqL._SY741_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61JL7s2IvHL._SX679_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/81iK-s4GF4L._SX679_.jpg",
+          "altText": "Women floral empire dress front view",
+          "isPrimary": false
+        },
+        {
+          "url": "https://m.media-amazon.com/images/I/61h1nuHR1IL._SY741_.jpg",
+          "altText": "Women floral empire dress side view",
+          "isPrimary": false
+        }
+      ],
+      "productDetails": [
+        "All-over floral print",
+        "Sleeveless with shoulder straps",
+        "Empire waist for a flattering fit",
+        "Midi length with flared hem"
+      ],
+      "specifications": {
+        "Shape": "Empire",
+        "Neck": "Shoulder Straps",
+        "Length": "Midi",
+        "Sleeve Length": "Sleeveless",
+        "Fabric": "Cotton",
+        "Hemline": "Flared",
+        "Occasion": "Casual",
+        "Fit": "Comfort Fit"
+      },
+      "sizeAndFit": {
+        "modelHeight": "5'7\"",
+        "modelSize": "M"
+      },
+      "materialAndCare": {
+        "material": "Cotton",
+        "care": "Machine Wash Cold"
+      },
+      "variants": [
+        {
+          "variantId": "v1",
+          "sku": "HM-FL-EMP-S",
+          "attributes": {
+            "size": "S"
+          },
+          "price": 2999,
+          "isAvailable": true
+        },
+        {
+          "variantId": "v2",
+          "sku": "HM-FL-EMP-M",
+          "attributes": {
+            "size": "M"
+          },
+          "price": 1999,
+          "isAvailable": true
+        }
+      ],
+      "totalQuantity": 85,
+      "ratingAverage": 4.5,
+      "reviewCount": 412,
+      "viewCount": 37800,
+      "createdAt": "2025-01-12T09:30:00Z",
+      "updatedAt": "2025-01-22T11:15:00Z"
+    }
+  ]
+}

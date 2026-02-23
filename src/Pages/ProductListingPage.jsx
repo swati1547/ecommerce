@@ -1,40 +1,45 @@
-import React, { useEffect } from "react";
-import ProductGrid from "../Components/Product/ProductGrid";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import ProductGrid from "../components/product-details/ProductGrid";
+import { useGetAllCategoriesQuery } from "../store/api/categoryApi";
+import { useGetProductsBySubCategorySlugQuery } from "../store/slices/products";
 import { useBreadcrumbContext } from "../context/BreadcrumbContext";
-import { useGetsubCategoryInfoBySlugQuery } from "../Store/subCategoryApi";
-import { useGetCategoryBySlugQuery } from "../Store/categoryapi";
 
 export default function ProductListingPage() {
   const { categorySlug, subCategorySlug } = useParams();
   const { setItems } = useBreadcrumbContext();
 
-  const { data: subCategory, isLoading: isSubLoading } =
-    useGetsubCategoryInfoBySlugQuery(subCategorySlug);
-
-  const { data: category, isLoading: isCategoryLoading } =
-    useGetCategoryBySlugQuery(categorySlug);
+  // fetch categories (json-server)
+  const { data: categories = [] } = useGetAllCategoriesQuery();
 
   useEffect(() => {
+    if (!categories.length) return;
+
+    // find category
+    const category = categories.find(
+      (cat) => cat.categorySlug === categorySlug,
+    );
+
+    // find subcategory
+    const subCategory = category?.subCategories?.find(
+      (sub) => sub.slug === subCategorySlug,
+    );
+
     if (!category || !subCategory) return;
+
     setItems([
       { label: "Home", to: "/" },
       {
-        label: category.name, // ✅ REAL category name
-        to: `/${category.slug}`,
+        label: category.categoryName,
+        to: `/${category.categorySlug}`,
       },
       {
-        label: subCategory.name, // ✅ REAL category name
-        to: `/${category.slug}/${subCategory.slug}`,
+        label: subCategory.name,
+        to: `/${category.categorySlug}/${subCategory.slug}`,
       },
     ]);
-  }, [category, subCategory, setItems]);
+  }, [categories, categorySlug, subCategorySlug, setItems]);
 
-  if (isSubLoading || isCategoryLoading) return <p>Loading...</p>;
-  // console.log(subCategorySlug, "listpage");
-  return (
-    <div>
-      <ProductGrid subCategorySlug={subCategorySlug} />
-    </div>
-  );
+  return <ProductGrid subCategorySlug={subCategorySlug} />;
 }

@@ -1,0 +1,56 @@
+@use "../../abstracts/variables" as *;
+
+.delivery {
+  margin: 30px 0 30px 0;
+
+  &__title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: cen3er;
+    color: #34384b;
+  }
+
+  &__text {
+    padding-left: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+
+    &_text {
+      font-size: 13px;
+      color: #ff3e6c;
+      font-weight: 700;
+    }
+  }
+
+  &__address {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    gap: 4px;
+    border: $light-gray solid 1px;
+    padding: 0 10px 0;
+    border-radius: 4px;
+    margin: 6px 0 16px;
+
+    &_changebtn {
+      margin-left: 45px;
+      font-size: 13px;
+      color: #ff3e6c;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}

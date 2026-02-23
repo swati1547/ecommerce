@@ -1,6 +1,23 @@
-@use "components/hero-banner";
-@use "pages/home-page";
-@use "components/navbar";
+// base
 @use "base/typography";
+
+// components
+@use "components/hero-banner";
 @use "components/product-grid";
+
+// component - product details
+@use "components/product-details/offer-plans";
+@use "components/product-details/delivery-options";
+@use "components/product-details/product-data";
+@use "components/product-details/action-buttons";
+@use "components/product-details/product-intro";
+@use "components/product-details/varient-selector";
+
+// layout
 @use "layout/breadcrumb";
+@use "layout/navbar";
+
+// pages
+@use "pages/home-page";
+@use "pages/product-details";
+@use "pages/product-info";

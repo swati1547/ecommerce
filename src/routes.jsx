@@ -1,11 +1,12 @@
 import HomePage from "./Pages/HomePage";
-import MainLayout from "./Pages/MainLayout";
-import ProductInfo from "./Pages/ProductInfo";
+import MainLayout from "./components/layout/MainLayout";
+import ProductOverview from "./components/product-details/ProductOverview";
 import ProductListingPage from "./Pages/ProductListingPage";
+import CategoryLandingPage from "./pages/CategoryPage";
 
 const routes = [
   {
-    element: <MainLayout />, // 👈 LAYOUT WRAPPER
+    element: <MainLayout />, // LAYOUT WRAPPER
     children: [
       {
         path: "/",
@@ -17,7 +18,11 @@ const routes = [
       },
       {
         path: "product/:productSlug/:productId",
-        element: <ProductInfo />,
+        element: <ProductOverview />,
+      },
+      {
+        path: ":categorySlug",
+        element: <CategoryLandingPage />, // or ProductListingPage reuse
       },
       {
         path: "*",

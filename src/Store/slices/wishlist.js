@@ -6,8 +6,8 @@ const wishList = createSlice({
   reducers: {
     addToWishlist(state, action) {
       state.push(action.payload);
-      console.log(action.payload);
-      console.log("added to wishLIst");
+      // console.log(action.payload);
+      // console.log("added to wishLIst");
     },
     removeFromWishlist(state, action) {
       return state.filter((item) => item.id !== action.payload.id);

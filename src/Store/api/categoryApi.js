@@ -7,13 +7,14 @@ export const categoryApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllCategoriesbyDept: builder.query({
-      query: (departmentId) =>
-        `/categories/department/${departmentId}/with-subcategories`,
+      // JSON DONE
+      query: (departmentId) => `/categories?departmentId=${departmentId}`,
     }),
-    getCategoryBySlug: builder.query({
-      query: (slug) => `/categories/slug/${slug}`,
+    getAllCategories: builder.query({
+      // JSON DONE
+      query: () => "/categories",
     }),
   }),
 });
-export const { useGetAllCategoriesbyDeptQuery, useGetCategoryBySlugQuery } =
+export const { useGetAllCategoriesbyDeptQuery, useGetAllCategoriesQuery } =
   categoryApi;

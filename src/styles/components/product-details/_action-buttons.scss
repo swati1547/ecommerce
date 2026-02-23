@@ -1,0 +1,41 @@
+@use "../../abstracts/variables" as *;
+
+.button {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 18px;
+  // width: 285px;
+
+  &__style {
+    height: 53px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 4px;
+    margin: 5px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  &__bag {
+    width: 285px;
+    border: #ff3e6c solid 1px;
+    padding: 15px 0 15px 0;
+    background-color: #ff527b;
+    color: #fff;
+
+    &:hover {
+      background-color: #ff698c;
+    }
+  }
+
+  &__wishlist {
+    background-color: #fff;
+    width: 191px;
+    border: $light-gray solid 1px;
+    padding: 10px 0 10px 0;
+    color: #282c3f;
+
+    &:hover {
+      border: #797474 solid 1px;
+    }
+  }
+}

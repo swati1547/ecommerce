@@ -1,0 +1,42 @@
+.details {
+  font-size: 16px;
+
+  &__head {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin: 2px 0;
+    width: fit-content;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+}
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* TWO COLUMNS */
+  gap: 3px 60px;
+  margin-right: 60px;
+}
+
+.specItem {
+}
+
+.specKey {
+  font-size: 12px;
+  color: #7e818c;
+  margin: 0px;
+}
+
+.specValue {
+  color: #111;
+  margin: 4px 0 6px;
+}

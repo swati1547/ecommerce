@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../../Pages/ProductCard";
+import ProductCard from "./ProductCard";
 
 export default function ProductGrid({ subCategorySlug }) {
   return (

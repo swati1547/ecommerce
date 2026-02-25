@@ -1,14 +1,9 @@
 import React from "react";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 
-export default function ProductData({ product }) {
+export default function ProductSpecs({ product }) {
   return (
     <div className="details">
-      <div className="details__head">
-        <p>Product Details</p>
-        <ArticleOutlinedIcon sx={{ fontSize: "18px", marginLeft: "10px" }} />
-      </div>
-      {product.ProductDetailsPage.map((detail, index) => {
+      {product?.productDetails?.map((detail, index) => {
         return (
           <p key={index} className="details__text">
             {detail}
@@ -33,27 +28,9 @@ export default function ProductData({ product }) {
           </div>
         ))}
       </div>
-      {/* <p>Currency: {product.currency}</p>
-      <p>Discount: {product.discountPercentage}%</p>
-      <p>Status: {product.isActive ? "Active" : "Inactive"}</p>
-      <p>Featured: {product.isFeatured ? "Yes" : "No"}</p>
-      <p>Views: {product.viewCount}</p>
-      <h3>Tags</h3>
-      <ul>
-        {product.tags?.map((tag, index) => (
-          <li key={index}>{tag}</li>
-        ))}
-      </ul>
-      <h3>Images</h3>
-
-      <h3>Variants</h3>
-      {product.variants?.map((variant, index) => (
-        <React.Fragment key={index}>
-          <p>{variant.size}</p>
-          <p>{variant.color}</p>
-          <p>{variant.qty}</p>
-        </React.Fragment>
-      ))} */}
+      <a href="#" className="link">
+        See More
+      </a>
     </div>
   );
 }

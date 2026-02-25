@@ -1,23 +1,29 @@
-// base
+// ABSTRACTS
+@use "./abstracts" as *;
+
+// BASE
 @use "base/typography";
 
-// components
+// COMPONENTS
 @use "components/hero-banner";
 @use "components/product-grid";
 
-// component - product details
+// PRODUCT DETAILS
 @use "components/product-details/offer-plans";
 @use "components/product-details/delivery-options";
-@use "components/product-details/product-data";
+@use "components/product-details/product-specs";
 @use "components/product-details/action-buttons";
 @use "components/product-details/product-intro";
 @use "components/product-details/varient-selector";
+@use "components/product-details/product-card";
+@use "components/product-details/product-overview";
+@use "components/product-details/product-price";
 
-// layout
+// LAYOUT
 @use "layout/breadcrumb";
 @use "layout/navbar";
+@use "layout/main-layout";
 
-// pages
+// PAGES
 @use "pages/home-page";
 @use "pages/product-details";
-@use "pages/product-info";

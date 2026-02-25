@@ -1,36 +1,19 @@
 import React from "react";
 import { Box } from "@mui/material";
-import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import MobileScreenShareOutlinedIcon from "@mui/icons-material/MobileScreenShareOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 
 export default function DeliveryOptions() {
   return (
     <Box className="delivery">
-      <h3 className="delivery__title">
-        Delivery Options
-        <LocalShippingOutlinedIcon
-          sx={{
-            fontSize: 20,
-            verticalAlign: "middle",
-            paddingBottom: "3px",
-            marginLeft: "10px",
-          }}
-        />
-      </h3>
-
-      {/*  */}
-
       <div className="delivery__address">
         <span>400708</span>
-        <span>( Swati Garje )</span>
         <CheckCircleIcon sx={{ fontSize: "18px", color: "#1ec471ca" }} />
         <p className="delivery__address_changebtn">Change</p>
       </div>
-
-      {/*  */}
 
       <div className="delivery__feature">
         <LocalShippingOutlinedIcon

@@ -1,41 +1,52 @@
-@use "../../abstracts/variables" as *;
+@use "../../abstracts/" as *;
 
 .button {
   display: flex;
-  gap: 15px;
-  margin-bottom: 18px;
-  // width: 285px;
+  gap: rem(16);
+  margin: rem(19.2) rem(112) rem(19.2) 0;
 
   &__style {
-    height: 53px;
-    font-weight: 700;
-    font-size: 15px;
-    border-radius: 4px;
-    margin: 5px 0;
-    text-transform: uppercase;
-    cursor: pointer;
+    @include button-base;
+    @include flex-center;
+    justify-content: center;
+    height: rem(51.2);
+    font-size: rem(15.2);
   }
+
+  // ICON STYLE (shared)
+  &__icon {
+    font-size: rem(20);
+    margin-right: rem(9.6);
+    vertical-align: middle;
+  }
+
+  // PRIMARY BUTTON (Add to bag)
   &__bag {
-    width: 285px;
-    border: #ff3e6c solid 1px;
-    padding: 15px 0 15px 0;
-    background-color: #ff527b;
+    width: 60%;
+    background-color: $primary-pink;
     color: #fff;
 
     &:hover {
-      background-color: #ff698c;
+      background-color: $primary-pink-hover;
     }
   }
 
+  // SECONDARY BUTTON (Wishlist)
   &__wishlist {
+    width: 40%;
     background-color: #fff;
-    width: 191px;
-    border: $light-gray solid 1px;
-    padding: 10px 0 10px 0;
-    color: #282c3f;
+    color: $text-dark;
+    border: 1px solid $light-gray;
 
     &:hover {
-      border: #797474 solid 1px;
+      border-color: #797474;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__bag,
+    &__wishlist {
+      width: 50%;
     }
   }
 }

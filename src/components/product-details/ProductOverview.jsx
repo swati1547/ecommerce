@@ -43,38 +43,20 @@ export default function ProductOverview() {
   if (!product) return null;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <Box
-        sx={{
-          width: "57%",
-          margin: "1.7rem",
-          height: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "8px",
-        }}
-      >
-        {product.images?.map((img, index) => (
+    <Box className="product-overview">
+      <Box className="product-overview__gallery">
+        {product.images?.map((img) => (
           <Box
             key={img.url}
             component="img"
             src={img.url}
             alt={img.altText}
-            sx={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-            }}
+            className="product-overview__image"
           />
         ))}
       </Box>
 
-      <Box
-        sx={{
-          width: "43%",
-          height: "100%",
-        }}
-      >
+      <Box className="product-overview__details">
         <ProductDetailsPage product={product} />
       </Box>
     </Box>

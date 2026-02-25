@@ -13,12 +13,10 @@ export default function ProductCard({ subCategorySlug }) {
   return (
     <>
       {products.map((product) => {
-        // ✅ get primary image
         const primaryImage = product?.images?.find(
           (img) => img.isPrimary === true,
         );
 
-        // ✅ calculate discount
         const discountedPrice = calculateDiscountedPrice(
           product?.basePrice,
           product?.discountPercentage,
@@ -27,28 +25,30 @@ export default function ProductCard({ subCategorySlug }) {
         return (
           <div
             key={product.id}
+            className="product-card"
             onClick={() => handleClick(product.productSlug, product.id)}
-            style={{ cursor: "pointer" }}
           >
             <img
-              width={200}
+              className="product-card__image"
               src={primaryImage?.url}
               alt={primaryImage?.altText}
             />
 
-            <p>{product?.brandName}</p>
-            <p>{product?.name}</p>
+            <p className="product-card__brand">{product?.brandName}</p>
+            <p className="product-card__name">{product?.name}</p>
 
             {product?.discountPercentage ? (
-              <>
-                <span>Rs.{discountedPrice}</span>
-                &nbsp;&nbsp;
-                <del>Rs.{product?.basePrice}</del>
-                &nbsp;&nbsp;
-                <span>{product?.discountPercentage}% OFF</span>
-              </>
+              <div>
+                <span className="product-card__price">
+                  Rs.{discountedPrice}
+                </span>
+                <del className="product-card__mrp">Rs.{product?.basePrice}</del>
+                <span className="product-card__discount">
+                  {product?.discountPercentage}% OFF
+                </span>
+              </div>
             ) : (
-              <p>Rs.{product?.basePrice}</p>
+              <p className="product-card__price">Rs.{product?.basePrice}</p>
             )}
           </div>
         );

@@ -1,20 +1,9 @@
 import React from "react";
-import SellOutlinedIcon from "@mui/icons-material/SellOutlined";
 
 export default function OfferPlans() {
   return (
     <>
-      <p className="original-products">100% Original Products</p>
       <div className="offer">
-        <p className="offer__title" style={{ marginBottom: "20px" }}>
-          BEST OFFERS{" "}
-          <SellOutlinedIcon
-            sx={{
-              fontSize: 17,
-            }}
-            className="offer__icon"
-          />
-        </p>
         <p className="offer__label">
           This product is already at its best price
         </p>
@@ -83,7 +72,6 @@ export default function OfferPlans() {
           &bull;&nbsp;&nbsp;&nbsp;EMI starting from Rs.50/month
         </p>
         <p className="offer__link">View Plan</p>
-        <hr className="hr" />
       </div>
     </>
   );

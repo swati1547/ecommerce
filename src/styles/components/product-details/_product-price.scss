@@ -1,0 +1,28 @@
+@use "../../abstracts/" as *;
+
+.price {
+  &__current {
+    font-size: rem(24);
+    font-weight: 700;
+    color: #282c3f;
+    margin-right: rem(10);
+  }
+  &__before {
+    font-size: rem(20);
+    font-weight: 400;
+    color: #64656a;
+  }
+  &__discount {
+    font-size: rem(20);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ff905a;
+  }
+
+  &__tax {
+    margin: rem(4) 0;
+    font-size: rem(14);
+    font-weight: 700;
+    color: #03a685;
+  }
+}

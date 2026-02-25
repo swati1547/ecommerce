@@ -6,26 +6,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 export default function ActionButtons() {
   return (
     <div className="button">
-      <button className="button__style button__bag">
-        <ShoppingBagIcon
-          sx={{
-            fontSize: 20,
-            verticalAlign: "middle",
-            paddingBottom: "3px",
-            marginRight: "10px",
-          }}
-        />
+      <button type="button" className="button__style button__bag">
+        <ShoppingBagIcon className="button__icon" />
         Add to bag
       </button>
-      <button className="button__style button__wishlist">
-        <FavoriteBorderIcon
-          sx={{
-            fontSize: 20,
-            verticalAlign: "middle",
-            paddingBottom: "3px",
-            marginRight: "10px",
-          }}
-        />
+
+      <button type="button" className="button__style button__wishlist">
+        <FavoriteBorderIcon className="button__icon" />
         Wishlist
       </button>
     </div>

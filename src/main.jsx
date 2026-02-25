@@ -7,7 +7,7 @@ import theme from "./styles/theme.js";
 import store from "./Store/store.js";
 import App from "./App.jsx";
 import "./styles/main.scss";
-import "./index.css";
+// import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>

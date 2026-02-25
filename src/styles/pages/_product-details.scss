@@ -1,15 +1,33 @@
-@use "../abstracts/mixins" as *;
+@use "../abstracts" as *;
 
 .pdp {
-  margin: 1.7rem 2rem 0 0.5rem;
+  margin: $space-5 $space-5 0 $space-3;
 
-  &__heading {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
+  @include respond(tablet) {
+    margin: $space-4;
+  }
+
+  @include respond(mobile) {
+    margin: $space-3;
+  }
+
+  &__title {
+    @include section-heading;
   }
 }
 
 .hr {
   @include hr;
+}
+.delivery-options {
+  margin: rem(28.8) rem(128) rem(19.2) 0;
+}
+.original-products {
+  font-size: rem(15);
+  font-weight: 400;
+  margin: rem(10) 0 rem(40) 0;
+}
+
+.specs {
+  margin-top: rem(32);
 }

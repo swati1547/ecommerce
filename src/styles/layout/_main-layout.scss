@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  padding-top: rem(80); // navbar offset only
+}

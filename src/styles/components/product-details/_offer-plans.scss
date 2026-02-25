@@ -1,39 +1,21 @@
-@use "../../base/typography" as *;
-@use "../../abstracts/mixins" as *;
+@use "../../abstracts/" as *;
 
 .offer {
-  &__icon {
-    vertical-align: middle;
-    margin-left: 5px;
-  }
+  margin-bottom: rem(32);
 
   &__link {
-    color: #ff3f6c;
-    font-size: 13px;
-    font-weight: 700;
-    margin: 8px 0 0 0;
-    text-decoration: none;
-    display: inline-block;
+    @include text-link;
   }
+
   &__title {
     font-weight: 700;
-    font-size: 15px;
-    margin: 15px 0 0 0;
+    font-size: rem(15);
+    margin: rem(15) 0 0 0;
   }
 
   &__label {
-    font-size: 13px;
+    font-size: rem(13);
     font-weight: 400;
-    margin: 6px 0 0 0;
+    margin: rem(6) 0 0 0;
   }
-}
-
-.original-products {
-  font-size: 15px;
-  font-weight: 400;
-  margin: 10px 0 40px 0;
-}
-
-.hr {
-  @include hr;
 }

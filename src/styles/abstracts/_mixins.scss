@@ -1,14 +1,72 @@
-@use "../abstracts/variables" as *;
+@use "./variables" as vars;
+@use "./breakpoints" as bp;
+@use "./functions" as func;
+@use "sass:map";
 
-@mixin heading-light {
-  margin: 0;
-  color: #535665;
-  font-weight: 400;
-  font-size: 20px;
+// Responsive Mixin
+@mixin respond($device) {
+  @media (max-width: map.get(bp.$breakpoints, $device)) {
+    @content;
+  }
 }
 
+// Heading Mixin (safe upgrade)
+@mixin heading-light {
+  margin: 0;
+  color: vars.$text-muted;
+  font-weight: vars.$fw-normal;
+  font-size: func.rem(20);
+}
+
+// Horizontal Line
 @mixin hr {
   border: none;
-  border-top: 1px solid $light-gray;
-  margin: 8px 0;
+  border-top: 1px solid vars.$light-gray;
+  margin: vars.$space-2 0;
+}
+
+// Flex utilities (NEW - very useful)
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin section-heading {
+  font-size: func.rem(15);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: vars.$space-2;
+}
+@mixin section-heading-secondary {
+  font-weight: 700;
+  font-size: func.rem(16);
+  text-transform: uppercase;
+}
+
+@mixin button-base {
+  height: func.rem(53);
+  font-weight: 700;
+  font-size: vars.$font-btn;
+  border-radius: func.rem(4);
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+@mixin text-link {
+  color: #ff3f6c;
+  font-size: func.rem(13);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
 }

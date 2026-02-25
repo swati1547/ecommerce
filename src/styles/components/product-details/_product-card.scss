@@ -1,0 +1,57 @@
+@use "../../abstracts/" as *;
+
+.product-card {
+  background: #fff;
+  border-radius: rem(4);
+  overflow: hidden;
+  transition: 0.25s ease;
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+    height: rem(280);
+    object-fit: cover;
+    background-color: #f5f5f5;
+
+    @include respond(mobile) {
+      height: height(220);
+    }
+  }
+
+  &__brand {
+    margin: $space-2 $space-3 rem(2);
+    font-size: rem(14);
+    font-weight: 600;
+    color: $text-primary;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin: 0 $space-3 $space-2;
+    font-size: rem(13);
+    color: $text-muted;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__price {
+    margin-left: $space-3;
+    font-size: rem(14);
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__mrp {
+    font-size: rem(12);
+    color: #7e818c;
+    margin-left: $space-2;
+  }
+
+  &__discount {
+    font-size: rem(12);
+    color: #ff905a;
+    font-weight: 500;
+    margin-left: $space-2;
+  }
+}

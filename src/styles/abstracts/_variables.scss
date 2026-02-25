@@ -1,1 +1,24 @@
+@use "./functions" as func;
+
+// COLORS
 $light-gray: #dddddd;
+$text-primary: #282c3f;
+$text-muted: #535665;
+$primary-pink: #ff527b;
+$primary-pink-hover: #ff698c;
+$text-dark: #282c3f;
+$text-light: #64656a;
+
+// FONT
+$font-base: 0.875rem; // 14px (same as now)
+$fw-normal: 400;
+$fw-medium: 500;
+$font-btn: func.rem(15);
+
+// SPACING SCALE (IMPORTANT)
+$space-1: 0.25rem; // ✅ FIX scalable
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;

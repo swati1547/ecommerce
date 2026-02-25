@@ -1,6 +1,9 @@
+@use "../abstracts" as *;
+
 .token {
   width: 100%;
 }
+
 .token-container {
-  margin: 0 15vh;
+  margin: 0 10%; //  responsive-safe
 }
